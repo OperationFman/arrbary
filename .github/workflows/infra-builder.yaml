@@ -1,5 +1,8 @@
 name: Terraform AWS Deployment
-on: [push]
+on:
+  push:
+    paths:
+      - "infra/**"
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -7,7 +10,7 @@ env:
 
 jobs:
   terraform:
-    name: Plan / Apply
+    name: Apply Terraform
     runs-on: ubuntu-latest
     defaults:
       run:
