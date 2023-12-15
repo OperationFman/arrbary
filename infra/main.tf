@@ -1,27 +1,8 @@
-terraform {
-  required_providers {
-    docker = {
-      source  = "kreuzwerker/docker"
-      version = "~> 3.0.1"
-    }
-  }
+provider "aws" {
+    region = "ap-southeast-2"
 }
 
-provider "docker" { 
-    host = "unix:///Users/franklinmoon/.colima/default/docker.sock"
-}
-
-resource "docker_image" "nginx" {
-  name         = "nginx"
-  keep_locally = false
-}
-
-resource "docker_container" "nginx" {
-  image = docker_image.nginx.image_id
-  name  = "tutorial"
-
-  ports {
-    internal = 80
-    external = 8000
-  }
+resource "aws_instance" "demo-ec2-instance" {
+    ami = "ami-0fc925ad6f3e05713"
+    instance_type = "t2.micro"
 }
