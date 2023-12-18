@@ -1,1 +1,0 @@
-Testing the infra github action triggers when a file is changed
