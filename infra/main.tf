@@ -1,8 +1,8 @@
-provider "aws" {
-    region = "ap-southeast-2"
-}
-
 resource "aws_instance" "demo-ec2-instance" {
-    ami = "ami-0fc925ad6f3e05713"
+    ami = "ami-06fdec94cc3067ad1"
     instance_type = "t2.micro"
+
+    vpc_security_group_ids = [aws_security_group.ssh-group.id]
+
+    user_data = "${file("docker-installer.sh")}"
 }
