@@ -4,5 +4,5 @@ resource "aws_instance" "demo-ec2-instance" {
 
     vpc_security_group_ids = [aws_security_group.ssh-group.id]
 
-    user_data = "${file("docker-installer.sh")}"
+    user_data = "${file("k8s-bootstrap.sh")}"
 }

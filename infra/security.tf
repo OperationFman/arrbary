@@ -1,5 +1,5 @@
 resource "aws_security_group" "ssh-group" {
-    name = "ssh"
+    name = "ssh-group"
     ingress { 
         cidr_blocks = ["0.0.0.0/0"]
         from_port = 22
