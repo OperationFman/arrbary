@@ -1,5 +1,5 @@
-resource "aws_security_group" "ssh-group" {
-    name = "allow-all"
+resource "aws_security_group" "allow-ssh" {
+    name = "allow-ssh"
     ingress { 
         cidr_blocks = ["0.0.0.0/0"]
         from_port = 22
