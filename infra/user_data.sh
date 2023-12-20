@@ -8,4 +8,4 @@ yum install -y git
 git clone https://github.com/OperationFman/arrbary.git /arrbary
 cd /arrbary/cluster
 
-sh setup.sh
+sh preflight.sh
