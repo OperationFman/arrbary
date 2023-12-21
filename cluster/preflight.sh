@@ -14,4 +14,4 @@ curl -s https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | ba
 curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 
 # Build cluster from scratch
-source k8s-boostrap.sh
+source k8s-bootstrap.sh
