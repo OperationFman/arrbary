@@ -9,4 +9,4 @@ git clone https://github.com/OperationFman/arrbary.git /arrbary
 cd /arrbary/cluster
 
 sh preflight.sh
-sh k8s-boostrap.sh
+sh bootstrap.sh
