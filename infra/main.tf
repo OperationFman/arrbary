@@ -1,5 +1,5 @@
 resource "aws_instance" "ec2-instance" {
-    name = "Arrbary"
+    name = "arrbary"
     ami = "ami-09eebd0b9bd845bf1"
     instance_type = "t2.large"
 
