@@ -1,6 +1,7 @@
-resource "aws_instance" "demo-ec2-instance" {
+resource "aws_instance" "ec2-instance" {
+    name = "Arrbary"
     ami = "ami-09eebd0b9bd845bf1"
-    instance_type = "t2.micro"
+    instance_type = "t2.large"
 
     vpc_security_group_ids = [
         aws_security_group.allow-ssh.id,
