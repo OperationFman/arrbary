@@ -13,15 +13,29 @@ You can learn more about the Arr stack (a suite of apps used to automatically
 grab, sort, organize, and monitor your Music, Movie, E-Book, or TV Show
 collections) here: https://wiki.servarr.com/
 
+### Spin Up Infrastructure
 
-
-### Spin Up Infrastructure 
 Install:
+
 - Brew https://brew.sh/
-- Terraform https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+- Terraform
+  https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
+1. Create a new IAM role within the AWS account you want to use and save the
+   access id/key
 
-1. Create a new IAM role within the AWS account you want to use and save the access id/key
+2. Install and configure the AWS CLI:
+   https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
-2. Install the AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html and configure the cli
+3. Clone this repo and navigate to the infra folder `cd infra`
 
+4. Run `terraform init && terraform apply` to spin up the cloud resources that
+   will run the cluster
+
+Notes:
+
+- Terraform will instance an S3 bucket, DynamoDB table and t2.large instance,
+  all of which will cost a small amount
+
+- It is recommended to terminate the EC2 t2.large instance once you've finished
+  as that comes with significant long-term running fees
