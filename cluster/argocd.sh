@@ -12,8 +12,8 @@ echo "y" |  rm argocd-linux-amd64
 
 
 # Config ArgoCD
-# kubectl port-forward svc/argocd-server -n argocd 8912:443
-kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+argocd login --core
+kubectl port-forward svc/argocd-server -n argocd 8912:443
 # TODO Set password using a secret
 
 

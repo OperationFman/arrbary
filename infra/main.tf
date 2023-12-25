@@ -1,11 +1,13 @@
-resource "aws_instance" "ec2-instance" {
-    ami = "ami-09eebd0b9bd845bf1"
-    instance_type = "t2.large"
+# Restore below code to allow EC2 to spin up again
 
-    vpc_security_group_ids = [
-        aws_security_group.allow-ssh.id,
-        aws_security_group.k8s-admin.id,
-    ]
+# resource "aws_instance" "ec2-instance" {
+#     ami = "ami-09eebd0b9bd845bf1"
+#     instance_type = "t2.large"
 
-    user_data = "${file("user_data.sh")}"
-}
+#     vpc_security_group_ids = [
+#         aws_security_group.allow-ssh.id,
+#         aws_security_group.k8s-admin.id,
+#     ]
+
+#     user_data = "${file("user_data.sh")}"
+# }

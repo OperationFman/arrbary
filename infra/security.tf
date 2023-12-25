@@ -19,23 +19,10 @@ resource "aws_security_group" "k8s-admin" {
   name = "k8s-admin"
 
   ingress {
-      from_port = 8081
-      to_port = 8081
-      protocol = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
       from_port = 8912
       to_port = 8912
       protocol = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
   }
 
-  egress {
-      from_port = 8912
-      to_port = 8912
-      protocol = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
-  }
 }
