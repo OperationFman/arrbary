@@ -13,6 +13,35 @@ You can learn more about the Arr stack (a suite of apps used to automatically
 grab, sort, organize, and monitor your Music, Movie, E-Book, or TV Show
 collections) here: https://wiki.servarr.com/
 
+---
+
+### Spin Up Cluster Locally
+
+If you're using Linux, simply run `/cluster/preflight.sh`, otherwise,
+
+Install:
+
+- Docker Desktop or Colima https://www.docker.com/products/docker-desktop/
+  https://github.com/abiosoft/colima
+- K3D
+  `curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash`
+- Kubectl https://kubernetes.io/docs/tasks/tools/
+
+1. Setup the cluster by running `/cluster/argocd.sh` Note: If you're on a Mac,
+   replace the '# Install ArgoCD CLI' step in the shell file with
+   `brew install argocd`
+
+2. Test the cluster is running by navigating to
+   `https://127.0.0.1:8080/applications` and observing the ArgoCD UI login
+   screen
+
+3. Get the ArgoCD password by running `argocd admin initial-password -n argocd`.
+   Username = admin
+
+You should see the cluster presented visually
+
+---
+
 ### Spin Up Infrastructure
 
 Install:

@@ -14,11 +14,4 @@ echo "y" |  rm argocd-linux-amd64
 # Config ArgoCD
 argocd login --core
 kubectl port-forward svc/argocd-server -n argocd 8912:443
-# TODO Set password using a secret
 
-
-# Spin up DEMO app
-kubectl config set-context --current --namespace=argocd
-argocd app create guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-server https://kubernetes.default.svc --dest-namespace default
-argocd app get guestbook
-argocd app sync guestbook
